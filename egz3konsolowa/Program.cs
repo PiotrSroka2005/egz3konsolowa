@@ -15,6 +15,36 @@ namespace egz3konsolowa
 
             return plec; 
         }
+        
+        static bool SprawdzPoprawnosc(int[] pesel)
+        {
+            bool poprawny = true;
+
+            int[] wagi = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
+
+            int S = 0;
+            int R = 0;
+
+            for(int i=0; i<wagi.Length; i++)
+            {
+                S += wagi[i] * pesel[i];
+            }
+
+            int M = S % 10;
+
+            if (M == 0)
+                R = 0;
+            else if (M > 0)
+                R = 10 - M;
+
+            if (R == pesel[10])
+                poprawny = true;
+            else
+                poprawny = false;
+            
+
+            return poprawny;
+        }
 
         static void Main(string[] args)
         {
