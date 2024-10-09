@@ -4,6 +4,13 @@ namespace egz3konsolowa
 {
     internal class Program
     {
+        /**********************************************
+        nazwa funkcji: SprawdzPlec
+        opis funkcji: sprawdza czy osoba jest kobietą czy mężczyzną po 10 liczbie pesel
+        parametry: int[] pesel - tablica liczba całkowitych, która zawiera pesel podany przez użytkownika
+        zwracany typ i opis: zwraca typ znakowy , jeżeli liczba jest parzysta zwraca K, w przeciwnym wypadku M
+        autor: pesel
+        **********************************************/
 
         static char SprawdzPlec(int[] pesel)
         {
@@ -55,10 +62,20 @@ namespace egz3konsolowa
 
             for(int i =0; i<11; i++)
             {
-                Console.WriteLine("Podaj liczbę " + (i+1) + "numeru pesel: ");
+                Console.WriteLine("Podaj liczbę " + (i+1) + " numeru pesel: ");
                 liczba = int.Parse(Console.ReadLine());
                 peselUzytkownika[i] = liczba;
             }
+
+            if(SprawdzPlec(peselUzytkownika) == 'K')
+                Console.WriteLine("Kobieta");
+            else
+                Console.WriteLine("Mężczyzna");
+
+            if(SprawdzPoprawnosc(peselUzytkownika) == true)
+                Console.WriteLine("Podano poprawny numer pesel");
+            else
+                Console.WriteLine("Podano niepoprawny numer pesel");
         }
     }
 }
