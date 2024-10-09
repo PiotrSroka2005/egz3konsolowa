@@ -49,6 +49,16 @@ namespace egz3konsolowa
         static void Main(string[] args)
         {
             int[] pesel = { 5, 5, 0, 3, 0, 1, 0, 1, 1, 9, 3 };
+            int[] peselUzytkownika = new int[11];
+
+            int liczba = 0;
+
+            for(int i =0; i<11; i++)
+            {
+                Console.WriteLine("Podaj liczbę " + (i+1) + "numeru pesel: ");
+                liczba = int.Parse(Console.ReadLine());
+                peselUzytkownika[i] = liczba;
+            }
         }
     }
 }
