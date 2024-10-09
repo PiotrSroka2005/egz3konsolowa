@@ -11,7 +11,7 @@ namespace egz3konsolowa
             if (pesel[9] % 2 == 0)
                 plec = 'K';
             else
-                plec = 'M';
+                plec = 'M'; 
 
             return plec; 
         }
