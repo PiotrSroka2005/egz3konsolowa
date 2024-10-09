@@ -13,7 +13,7 @@ namespace egz3konsolowa
             else
                 plec = 'M';
 
-            return plec;
+            return plec; 
         }
 
         static void Main(string[] args)
